@@ -115,6 +115,19 @@ public class ResTest {
   #jdbcSchema=$Database_Schema$
   jdbcLogin=$Database_User$
   jdbcPass=$Database_Password$
+  /**
+   * 
+   * Second Test for the NewTestCase_ID424558 method.
+   * 
+   */
+  @Test
+  public void testNewTestCase_ID424558() {
+    MiniClient c = new MiniClient();
+    c.setConnectorEndpoint(connector.getHttpEndpoint());
+    
+    
+    
+  }
 
 
 

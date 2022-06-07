@@ -110,11 +110,6 @@ public class ResTest {
   #jdbcSchema=$Database_Schema$
   jdbcLogin=$Database_User$
   jdbcPass=$Database_Password$
-  jdbcDriverClassName=com.mysql.jdbc.Driver
-  jdbcUrl=jdbc:mysql://$Database_Address$/$Database_Schema$
-  #jdbcSchema=$Database_Schema$
-  jdbcLogin=$Database_User$
-  jdbcPass=$Database_Password$
   /**
    * 
    * Second Test for the NewTestCase_ID424558 method.
@@ -125,9 +120,25 @@ public class ResTest {
     MiniClient c = new MiniClient();
     c.setConnectorEndpoint(connector.getHttpEndpoint());
     
+        
+    try {
+      c.setLogin(AnonymousAgentImpl.IDENTIFIER, "");
+      ClientResponse result = c.sendRequest("GET", mainPath + "/", "");
     
+      System.out.println("Result of 'test$HTTP_Method_Name$': " + result.getResponse().trim());
+    } catch (Exception e) {
+      e.printStackTrace();
+      fail("Exception: " + e);
+    }
+    
+
     
   }
+  jdbcDriverClassName=com.mysql.jdbc.Driver
+  jdbcUrl=jdbc:mysql://$Database_Address$/$Database_Schema$
+  #jdbcSchema=$Database_Schema$
+  jdbcLogin=$Database_User$
+  jdbcPass=$Database_Password$
 
 
 
